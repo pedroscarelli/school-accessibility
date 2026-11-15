@@ -1,91 +1,91 @@
-# POC Acesso Escolar com Grafos
+# School Access POC with Graphs
 
-Este projeto é uma POC que demonstra como usar grafos para avaliar a acessibilidade de alunos à escola após bloqueios de ruas causados por fortes chuvas e alagamentos.
-## 📖 Introdução
+This project is a POC that shows how graphs can be used to evaluate students' accessibility to school after street blockages caused by heavy rain and flooding.
+## 📖 Introduction
 
-Após fortes chuvas, muitas ruas do bairro ficaram alagadas e intransitáveis. Este POC modela o bairro como um grafo, onde:
+After heavy rain, many streets in the neighborhood were flooded and impassable. This POC models the neighborhood as a graph, where:
 
-- **Nós** representam casas de alunos (Júlia, Antônio, Rafaela) e a escola.  
-- **Arestas** representam ruas que ligam esses pontos.  
+- **Nodes** represent students' homes (Júlia, Antônio, Rafaela) and the school.  
+- **Edges** represent the streets connecting those points.  
 
-Bloqueios por alagamentos são simulados removendo-se arestas, e então avaliamos se cada aluno ainda consegue chegar à escola dentro do mesmo grafo (bairros sem sair dos limites).
-
----
-
-## 🎯 Objetivo
-
-- Representar o bairro como um grafo usando a biblioteca **NetworkX**.  
-- Simular alagamentos removendo arestas.  
-- Verificar a conectividade (número de caminhos) entre cada casa e a escola, antes e depois dos bloqueios.
+Flood blockages are simulated by removing edges, and we then evaluate whether each student can still reach the school within the same graph (neighborhoods without leaving its boundaries).
 
 ---
 
-## 📷 Representação visual do grafo
+## 🎯 Goal
+
+- Represent the neighborhood as a graph using the **NetworkX** library.  
+- Simulate flooding by removing edges.  
+- Check the connectivity (number of paths) between each home and the school, before and after the blockages.
+
+---
+
+## 📷 Visual representation of the graph
 
 ![image](https://github.com/user-attachments/assets/eec8d939-242a-41c5-9472-92704dd7064e)
 
 ---
 
-## 🛠️ Ferramentas e Tecnologias
+## 🛠️ Tools and Technologies
 
 - **Python 3.7+**  
-- **NetworkX** (para modelagem e análise de grafos)   ( https://networkx.org/documentation/stable/tutorial.html )
+- **NetworkX** (for graph modeling and analysis)   ( https://networkx.org/documentation/stable/tutorial.html )
 
 ---
 
-## 📦 Estrutura do Projeto
+## 📦 Project Structure
 
 /
-├── school_accessibility.py # Script principal que cria o grafo e faz as análises
-├── requirements.txt # Dependências do projeto
-└── README.md # Este arquivo
+├── school_accessibility.py # Main script that builds the graph and runs the analyses
+├── requirements.txt # Project dependencies
+└── README.md # This file
 
 
 ---
 
-## ⚙️ Instalação e Uso
+## ⚙️ Installation and Usage
 
-1. Clone este repositório:  
+1. Clone this repository:  
    ```bash
    git clone https://github.com/pedro-scarelli/acessibilidade-escolar-grafos.git
    cd acessibilidade-escolar-grafos
     ```
-2. Crie um ambiente virtual e instale as dependências:  
+2. Create a virtual environment and install the dependencies:  
 ```bash
 python -m venv .venv
 source .venv/bin/activate   # Linux/Mac
 .venv\Scripts\activate      # Windows
 pip install -r requirements.txt
 ```  
-3. Execute o script para ver os resultados:  
+3. Run the script to see the results:  
 ```bash
     python school_accessibility.py
 ```  
-## 📊 Resultados
-Conectividade Inicial (antes dos bloqueios)
+## 📊 Results
+Initial Connectivity (before the blockages)
 
-    Júlia → Escola: 2 caminhos
+    Júlia → School: 2 paths
 
-    Rafaela → Escola: 2 caminhos
+    Rafaela → School: 2 paths
 
-    Antônio → Escola: 1 caminho
+    Antônio → School: 1 path
 
-## Conectividade Após Bloqueios (ruas alagadas removidas)
+## Connectivity After Blockages (flooded streets removed)
 
-    Júlia → Escola: 1 caminho
+    Júlia → School: 1 path
 
-    Rafaela → Escola: 1 caminho
+    Rafaela → School: 1 path
 
-    Antônio → Escola: 0 caminhos (acesso interrompido)
+    Antônio → School: 0 paths (access cut off)
 
-## ⚠️ Dificuldades Encontradas
+## ⚠️ Challenges
 
-    Modelagem no Grafo
-    Traduzir um cenário real (ruas, alagamentos) em nós e arestas exige cuidado para garantir fidelidade da representação.
+    Graph Modeling
+    Translating a real-world scenario (streets, flooding) into nodes and edges takes care to keep the representation faithful.
 
-    Desempenho em Grafos Densos
-    Em grafos com muitas conexões, a análise de conectividade pode ficar lenta, especialmente ao recalcular caminhos após cada remoção de aresta.
+    Performance on Dense Graphs
+    On graphs with many connections, connectivity analysis can get slow, especially when recalculating paths after each edge removal.
 
-## 📝 Conclusão
+## 📝 Conclusion
 
-Esta POC comprova que grafos são uma ferramenta eficaz para simular e avaliar acessibilidade em cenários de desastre (alagamentos). Usando NetworkX, conseguimos identificar rapidamente quais alunos perderam o acesso à escola e quantos caminhos alternativos permanecem disponíveis.
+This POC shows that graphs are an effective tool for simulating and evaluating accessibility in disaster scenarios (flooding). Using NetworkX, we can quickly identify which students lost access to the school and how many alternative paths remain available.

@@ -1,7 +1,7 @@
 import networkx as nx
 from networkx.algorithms.connectivity import local_node_connectivity
 
-# 1. Lista de adjacência representando ruas
+# 1. Adjacency list representing streets
 streets = [
     ("A", "B"),
     ("A", "C"),
@@ -35,22 +35,22 @@ streets = [
     ("T", "U"),
 ]
 
-# 2. Criando o grafo
+# 2. Building the graph
 G = nx.Graph()
 G.add_edges_from(streets)
 
-# 3. Conectividade inicial
-print("Conectividade inicial:")
-print("Julia -> Escola:", local_node_connectivity(G, "A", "U"))
-print("Rafaela -> Escola:", local_node_connectivity(G, "O", "U"))
-print("Antonio -> Escola:", local_node_connectivity(G, "G", "U"))
+# 3. Initial connectivity
+print("Initial connectivity:")
+print("Julia -> School:", local_node_connectivity(G, "A", "U"))
+print("Rafaela -> School:", local_node_connectivity(G, "O", "U"))
+print("Antonio -> School:", local_node_connectivity(G, "G", "U"))
 
-# 4. Simulando alagamentos
+# 4. Simulating floods
 blocked_streets = [("R", "U"), ("R", "W"), ("T", "U")]
 G.remove_edges_from(blocked_streets)
 
-# 5. Conectividade após bloqueios
-print("Conectividade após ruas bloqueadas:")
-print("Julia -> Escola:", local_node_connectivity(G, "A", "U"))
-print("Rafaela -> Escola:", local_node_connectivity(G, "O", "U"))
-print("Antonio -> Escola:", local_node_connectivity(G, "G", "U"))
+# 5. Connectivity after blockages
+print("Connectivity after blocked streets:")
+print("Julia -> School:", local_node_connectivity(G, "A", "U"))
+print("Rafaela -> School:", local_node_connectivity(G, "O", "U"))
+print("Antonio -> School:", local_node_connectivity(G, "G", "U"))
