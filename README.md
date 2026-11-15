@@ -47,8 +47,8 @@ Flood blockages are simulated by removing edges, and we then evaluate whether ea
 
 1. Clone this repository:  
    ```bash
-   git clone https://github.com/pedro-scarelli/acessibilidade-escolar-grafos.git
-   cd acessibilidade-escolar-grafos
+   git clone https://github.com/pedroscarelli/school-accessibility-graphs.git
+   cd school-accessibility-graphs
     ```
 2. Create a virtual environment and install the dependencies:  
 ```bash
